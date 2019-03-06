@@ -9,4 +9,5 @@ public class Farm {
     ArrayList<ChickenCoop> chickenCoops;
     FarmHouse farmHouse;
     ArrayList<Field> fields;
+    Silo silo;
 }
