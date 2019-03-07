@@ -7,19 +7,32 @@ import com.zipcodewilmington.froilansfarm.Interfaces.VehicleInterfaces.FarmVehic
 import com.zipcodewilmington.froilansfarm.Vehicle.Vehicle;
 
 public class CropDuster extends Vehicle implements FarmVehicle, Aircraft {
+
+
+
+    public boolean isFlying = false;
+
     public void makeNoise() {
 
+        String noise = "Hum and Roar!";
+        System.out.println(noise);
     }
 
     public void fly() {
 
+      isFlying = true;
     }
 
     public void operate(Farm farm) {
+
 
     }
 
     public void fertilize(CropRow cropRow){
 
+    }
+
+    public boolean getisFlying() {
+        return isFlying;
     }
 }
