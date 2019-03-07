@@ -8,6 +8,10 @@ import com.zipcodewilmington.froilansfarm.Interfaces.Produce;
 public class Chicken extends Animal implements Produce {
     private boolean hasBeenFertilized;
 
+    public Chicken() {
+        hasBeenFertilized = false;
+    }
+
     public boolean eat(Edible food) {
         if (food instanceof EarCorn){
             return true;
@@ -37,11 +41,11 @@ public class Chicken extends Animal implements Produce {
         }
     }
 
-    public boolean isHasBeenFertilized() {
+    public boolean isFertilized() {
         return hasBeenFertilized;
     }
 
-    public void setHasBeenFertilized(boolean hasBeenFertilized) {
+    public void setFertilized(boolean hasBeenFertilized) {
         this.hasBeenFertilized = hasBeenFertilized;
     }
 }
