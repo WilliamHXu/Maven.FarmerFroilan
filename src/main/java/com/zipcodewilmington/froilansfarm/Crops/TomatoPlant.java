@@ -17,8 +17,4 @@ public class TomatoPlant extends Crop {
         }
         return null;
     }
-
-    public void fertilize(){
-        hasBeenFertilized = true;
-    }
 }

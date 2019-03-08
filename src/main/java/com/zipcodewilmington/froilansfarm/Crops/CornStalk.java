@@ -19,7 +19,4 @@ public class CornStalk extends Crop{
         return null;
     }
 
-    public void fertilize(){
-        hasBeenFertilized = true;
-    }
 }
