@@ -14,10 +14,10 @@ import java.util.Arrays;
 
 public class Tractor extends Vehicle implements FarmVehicle {
 
-    public Edible harvest(Crop crop){
-
-        return crop.yield();
-    }
+//    public Edible harvestCrop(Crop crop){
+//
+//        return crop.yield();
+//    }
 
     public void makeNoise() {
 
@@ -32,9 +32,11 @@ public class Tractor extends Vehicle implements FarmVehicle {
 
         for(Crop c:crops) {
 
-            if (c.yield() != null) {
+            Edible edible = c.yield();
 
-                edibles.add(c.yield());
+            if (edible != null) {
+
+                edibles.add(edible);
             }
 
         }
