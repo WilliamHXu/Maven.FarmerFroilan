@@ -22,7 +22,7 @@ public class Chicken extends Animal implements Produce {
     }
 
     public void makeNoise() {
-        String noise = "Cuck!";
+        String noise = "Cluck!";
         System.out.println(noise);
     }
 
