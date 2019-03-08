@@ -5,22 +5,22 @@ import com.zipcodewilmington.froilansfarm.Field.Field;
 import java.util.ArrayList;
 
 public class Farm {
-    ArrayList<Stable> stables;
-    ArrayList<ChickenCoop> chickenCoops;
-    ArrayList<FarmHouse> farmHouses;
-    ArrayList<Field> fields;
-    Silo silo;
+    private ArrayList<Stable> stables;
+    private ArrayList<ChickenCoop> chickenCoops;
+    private FarmHouse farmHouse;
+    private Field field;
+    private Silo silo;
 
-    public Farm(ArrayList<Stable> stables, ArrayList<ChickenCoop> chickenCoops, ArrayList<FarmHouse> farmHouses, ArrayList<Field> fields, Silo silo) {
+    public Farm(ArrayList<Stable> stables, ArrayList<ChickenCoop> chickenCoops, FarmHouse farmHouse, Field field, Silo silo) {
         this.stables = stables;
         this.chickenCoops = chickenCoops;
-        this.farmHouses = farmHouses;
-        this.fields = fields;
+        this.farmHouse = farmHouse;
+        this.field = field;
         this.silo = silo;
     }
 
     public Farm() {
-        this(new ArrayList<Stable>(), new ArrayList<ChickenCoop>(), new ArrayList<FarmHouse>(), new ArrayList<Field>(), new Silo());
+        this(new ArrayList<Stable>(), new ArrayList<ChickenCoop>(), new FarmHouse(), new Field(), new Silo());
     }
 
     public ArrayList<Stable> getStables() {
@@ -47,28 +47,20 @@ public class Farm {
         this.chickenCoops.remove(chickenCoop);
     }
 
-    public ArrayList<FarmHouse> getFarmHouses() {
-        return farmHouses;
+    public FarmHouse getFarmHouse() {
+        return farmHouse;
     }
 
-    public void addFarmHouse(FarmHouse farmHouse) {
-        this.farmHouses.add(farmHouse);
+    public void setFarmHouse(FarmHouse farmHouse) {
+        this.farmHouse = farmHouse;
     }
 
-    public void removeFarmHouse(FarmHouse farmHouse) {
-        this.farmHouses.remove(farmHouse);
+    public ArrayList<Field> getField() {
+        return field;
     }
 
-    public ArrayList<Field> getFields() {
-        return fields;
-    }
-
-    public void addField(Field field) {
-        this.fields.add(field);
-    }
-
-    public void removeField(Field field) {
-        this.fields.remove(field);
+    public void setField(Field field) {
+        this.field = field;
     }
 
     public Silo getSilo() {
