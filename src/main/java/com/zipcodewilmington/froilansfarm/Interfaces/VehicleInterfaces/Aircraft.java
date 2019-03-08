@@ -4,5 +4,5 @@ import com.zipcodewilmington.froilansfarm.Vehicle.Vehicle;
 
 public interface Aircraft{
     // Aircraft can fly
-    abstract void fly();
+    void fly();
 }
