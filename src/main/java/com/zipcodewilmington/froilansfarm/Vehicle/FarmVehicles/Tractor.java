@@ -43,7 +43,7 @@ public class Tractor extends Vehicle implements FarmVehicle {
 
         public Edible[] operate(Farm farm){
 
-        Field field = farm.getFields();
+        Field field = farm.getField();
         ArrayList<Edible> edibles = new ArrayList<Edible>();
 
         ArrayList <CropRow> cropRows = field.get();
