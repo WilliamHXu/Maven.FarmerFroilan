@@ -7,20 +7,23 @@ import org.junit.Test;
 public class CropDusterTests {
 
     @Test
-    public void makeNoiseTest(){
+    public void makeNoiseTest() {
 
 
     }
 
+    @Test
     public void fly() {
 
     }
 
+    @Test
     public void operate(Farm farm) {
 
     }
 
-    public void fertilize(CropRow cropRow){
+    @Test
+    public void fertilize(CropRow cropRow) {
 
     }
 

@@ -32,9 +32,11 @@ public class Tractor extends Vehicle implements FarmVehicle {
 
         for(Crop c:crops) {
 
-            if (c.yield() != null) {
+            Edible edible = c.yield();
 
-                edibles.add(c.yield());
+            if (edible != null) {
+
+                edibles.add(edible);
             }
 
         }
