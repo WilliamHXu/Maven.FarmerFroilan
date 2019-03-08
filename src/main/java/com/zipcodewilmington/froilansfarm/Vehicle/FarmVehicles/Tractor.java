@@ -31,15 +31,20 @@ public class Tractor extends Vehicle implements FarmVehicle {
         ArrayList<Edible> edibles = new ArrayList<Edible>();
 
         for(Crop c:crops) {
+//
+//            if (!c.isFertilized()) {
+//                c.fertilize();
+//            }
+            //if (!c.isHarvested()) {
 
-            Edible edible = c.yield();
+                Edible edible = c.yield();
+                if (edible != null) {
 
-            if (edible != null) {
+                    edibles.add(edible);
+                }
 
-                edibles.add(edible);
             }
 
-        }
         return  edibles.toArray(new Edible[edibles.size()]);
     }
 
