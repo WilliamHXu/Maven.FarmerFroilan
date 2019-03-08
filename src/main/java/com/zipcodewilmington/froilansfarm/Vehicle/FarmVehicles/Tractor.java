@@ -31,11 +31,6 @@ public class Tractor extends Vehicle implements FarmVehicle {
         ArrayList<Edible> edibles = new ArrayList<Edible>();
 
         for(Crop c:crops) {
-//
-//            if (!c.isFertilized()) {
-//                c.fertilize();
-//            }
-            //if (!c.isHarvested()) {
 
                 Edible edible = c.yield();
                 if (edible != null) {
@@ -45,7 +40,7 @@ public class Tractor extends Vehicle implements FarmVehicle {
 
             }
 
-        return  edibles.toArray(new Edible[edibles.size()]);
+        return  edibles.toArray(new Edible[0]);
     }
 
         public Edible[] operate(Farm farm){
@@ -61,8 +56,11 @@ public class Tractor extends Vehicle implements FarmVehicle {
             }
 
         }
-        return edibles.toArray(new Edible[edibles.size()]);
+        return edibles.toArray(new Edible[0]);
         }
+
+
+       // @Override AtEquals method
 
     }
 
