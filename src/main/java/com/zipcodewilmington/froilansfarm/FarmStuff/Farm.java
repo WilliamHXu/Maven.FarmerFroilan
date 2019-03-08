@@ -55,7 +55,7 @@ public class Farm {
         this.farmHouse = farmHouse;
     }
 
-    public ArrayList<Field> getField() {
+    public Field getField() {
         return field;
     }
 
