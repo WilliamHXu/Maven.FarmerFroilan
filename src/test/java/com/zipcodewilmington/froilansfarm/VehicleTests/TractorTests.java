@@ -74,12 +74,12 @@ public class TractorTests {
 
         //Edible earCorn1 = new EarCorn();
 
-        Edible earCorn1 = cornStalk1.yield();
-        Edible earCorn2 = cornStalk2.yield();
-        Edible earCorn3 = cornStalk3.yield();
-        Edible earCorn4 = cornStalk4.yield();
+//        Edible earCorn1 = cornStalk1.yield();
+//        Edible earCorn2 = cornStalk2.yield();
+//        Edible earCorn3 = cornStalk3.yield();
+//        Edible earCorn4 = cornStalk4.yield();
 
-        Edible[] expected = {earCorn1, earCorn2, earCorn3, earCorn4};
+        Edible[] expected = {new EarCorn(), new EarCorn(), new EarCorn(), new EarCorn()};
 //
 //        ArrayList<CornStalk> corns = new ArrayList<CornStalk>();
 //        corns.add(cornStalk1);
