@@ -3,7 +3,7 @@ package com.zipcodewilmington.froilansfarm.FarmStuff;
 import java.util.ArrayList;
 
 public abstract class CRUDs<T>{
-    ArrayList<T> objects;
+    protected ArrayList<T> objects;
 
     public void add(T object){objects.add(object);}
 

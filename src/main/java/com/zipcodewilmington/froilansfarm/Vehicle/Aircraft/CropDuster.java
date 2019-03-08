@@ -30,8 +30,11 @@ public class CropDuster extends Vehicle implements FarmVehicle, Aircraft {
 
     public Edible [] operate(Farm farm) {
 
-        if(isFlying = false)
-            System.out.println("Please fly the crop duster to operate");
+        if(isFlying = false) {
+            System.out.println("Will start flying the crop duster to operate");
+            fly();
+            System.out.println("Now the field in the farm has been dusted");
+        }
 
         else
             System.out.println("The field in the farm has been dusted");
@@ -42,14 +45,12 @@ public class CropDuster extends Vehicle implements FarmVehicle, Aircraft {
 
         ArrayList<Crop> crops = cropRow.get();
 
-//        for(Crop c : crops){
-//            if(c.fertilize){
-//                count++;
-//            }
-//
-//        }
-
-
+        for(Crop c : crops) {
+            if (!(c.isFertilized())) {
+                c.fertilize();
+            }
+        }
+        System.out.println("The field in the farm has been dusted");
     }
 
     public boolean getisFlying() {
