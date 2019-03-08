@@ -39,16 +39,17 @@ public class TractorTests {
 
     }
 
-//    public void operateTest() {
-//        Tractor tractor = new Tractor();
-//        Field field = new Field();
-//        Farm farm = new Farm(null, null,null, null, null);
-//        tractor.operate(farm);
-//
-//        Assert.assertEquals(expected , actual);
-//
+    @Test
+    public void operateTest() {
+        Tractor tractor = new Tractor();
+        Field field = new Field();
+        Farm farm = new Farm(null, null,null, null, null);
+        tractor.operate(farm);
 
-    // }
+       // Assert.assertEquals(expected , actual);
+     }
+
+
     @Test
     public void harvestTest() {
         Tractor tractor = new Tractor();
@@ -68,32 +69,18 @@ public class TractorTests {
         cropRow.add(cornStalk3);
         cropRow.add(cornStalk4);
 
-        //ArrayList <Crop> crops = cropRow.get();
-
-        //Edible[] actual = tractor.harvest(cropRow);
-
-        //Edible earCorn1 = new EarCorn();
-
-//        Edible earCorn1 = cornStalk1.yield();
-//        Edible earCorn2 = cornStalk2.yield();
-//        Edible earCorn3 = cornStalk3.yield();
-//        Edible earCorn4 = cornStalk4.yield();
-
-        Edible[] expected = {new EarCorn(), new EarCorn(), new EarCorn(), new EarCorn()};
-//
-//        ArrayList<CornStalk> corns = new ArrayList<CornStalk>();
-//        corns.add(cornStalk1);
-//        corns.add(cornStalk2);
-//        corns.add(cornStalk3);
-//        corns.add(cornStalk4);
-
-        //EarCorn earCorn1 = cornStalk1.yield();
-
-        //cropRow.get();
-
         Edible[] actual = tractor.harvest(cropRow);
 
-        Assert.assertArrayEquals(expected, actual);
+        boolean flag = true;
+
+        for (Edible edible : actual) {
+            if (!(edible instanceof EarCorn)) {
+                flag = false;
+                break;
+            }
+        }
+
+        Assert.assertTrue(flag);
 
 
     }
