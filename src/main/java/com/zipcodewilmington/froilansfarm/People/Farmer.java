@@ -8,6 +8,10 @@ import com.zipcodewilmington.froilansfarm.Interfaces.PeopleInterfaces.Rider;
 import com.zipcodewilmington.froilansfarm.Interfaces.Rideable;
 
 public class Farmer extends Person implements Rider, Botanist {
+
+    public Farmer() { }
+
+
     public boolean eat(Edible food) {
         return true;
     }

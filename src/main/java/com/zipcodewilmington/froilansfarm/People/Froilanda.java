@@ -1,5 +1,22 @@
 package com.zipcodewilmington.froilansfarm.People;
 
-public class Froilanda {
+import com.zipcodewilmington.froilansfarm.Interfaces.PeopleInterfaces.Pilot;
+
+public class Froilanda extends Farmer implements Pilot {
+
+    private static Froilanda froilanda;
+
+    private Froilanda(){}
+
+    public static Pilot getInstance(){
+        if(froilanda == null){
+            froilanda = new Froilanda();
+        }
+        return froilanda;
+    }
+
+    public void operateAircraft() {};
 
 }
+
+
