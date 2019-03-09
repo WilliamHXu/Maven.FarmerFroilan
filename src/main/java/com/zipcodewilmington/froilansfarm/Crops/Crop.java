@@ -28,9 +28,4 @@ public abstract class Crop implements Produce {
         return hasBeenHarvested == crop.hasBeenHarvested &&
                 hasBeenFertilized == crop.hasBeenFertilized;
     }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(hasBeenHarvested, hasBeenFertilized);
-    }
 }
