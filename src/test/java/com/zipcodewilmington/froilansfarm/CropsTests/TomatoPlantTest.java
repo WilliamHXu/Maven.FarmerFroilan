@@ -23,4 +23,25 @@ public class TomatoPlantTest {
         Edible edible = tomatoPlant.yield();
         Assert.assertNull(edible);
     }
+
+    @Test
+    public void fertilizeTest(){
+        TomatoPlant tomatoPlant = new TomatoPlant();
+        boolean expected1 = tomatoPlant.isFertilized();
+        tomatoPlant.fertilize();
+        boolean expected2 =  tomatoPlant.isFertilized();
+        Assert.assertFalse(expected1);
+        Assert.assertTrue(expected2);
+    }
+
+    @Test
+    public void harvestTest(){
+        TomatoPlant tomatoPlant = new TomatoPlant();
+        boolean expected1 = tomatoPlant.isHarvested();
+        tomatoPlant.fertilize();
+        tomatoPlant.yield();
+        boolean expected2 =  tomatoPlant.isHarvested();
+        Assert.assertFalse(expected1);
+        Assert.assertTrue(expected2);
+    }
 }

@@ -13,6 +13,7 @@ public class TomatoPlant extends Crop {
     // Yields a Tomato
     public Edible yield() {
         if(hasBeenFertilized && !hasBeenHarvested){
+            hasBeenHarvested = true;
             return new Tomato();
         }
         return null;
