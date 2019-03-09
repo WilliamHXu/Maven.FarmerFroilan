@@ -68,7 +68,7 @@ public class ChickenTest {
     public void makeNoiseTest(){
         Chicken chicken = new Chicken();
         chicken.makeNoise();
-        String expected = "Cuck!\n";
+        String expected = "Cluck!\n";
         String actual = outContent.toString();
         Assert.assertEquals(expected , actual);
     }

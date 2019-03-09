@@ -40,6 +40,27 @@ public class CornStalkTest {
         Assert.assertNull(edible);
     }
 
+    @Test
+    public void fertilizeTest(){
+        CornStalk cornStalk = new CornStalk();
+        boolean expected1 = cornStalk.isFertilized();
+        cornStalk.fertilize();
+        boolean expected2 =  cornStalk.isFertilized();
+        Assert.assertFalse(expected1);
+        Assert.assertTrue(expected2);
+    }
+
+    @Test
+    public void harvestTest(){
+        CornStalk cornStalk = new CornStalk();
+        boolean expected1 = cornStalk.isHarvested();
+        cornStalk.fertilize();
+        cornStalk.yield();
+        boolean expected2 =  cornStalk.isHarvested();
+        Assert.assertFalse(expected1);
+        Assert.assertTrue(expected2);
+    }
+
     @After
     public void restoreStreams() {
         System.setOut(originalOut);
