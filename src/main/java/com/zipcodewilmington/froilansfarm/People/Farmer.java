@@ -9,22 +9,26 @@ import com.zipcodewilmington.froilansfarm.Interfaces.Rideable;
 
 public class Farmer extends Person implements Rider, Botanist {
     public boolean eat(Edible food) {
-        return false;
+        return true;
     }
 
     public void makeNoise() {
-
+        String noise = "YeeHaw!";
+        System.out.println(noise);
     }
 
     public void plant(Crop crop, CropRow row) {
-
+        row.add(crop);
     }
 
     public void mount(Rideable rideable) {
+        
 
     }
 
     public void dismount(Rideable rideable) {
 
     }
+
+
 }
