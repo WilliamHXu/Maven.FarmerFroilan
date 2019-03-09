@@ -8,14 +8,16 @@ public class Froilanda extends Farmer implements Pilot {
 
     private Froilanda(){}
 
-    public static Pilot getInstance(){
+    public static Froilanda getInstance(){
         if(froilanda == null){
             froilanda = new Froilanda();
         }
         return froilanda;
     }
 
-    public void operateAircraft() {};
+    public void operateAircraft() {
+
+    }
 
 }
 

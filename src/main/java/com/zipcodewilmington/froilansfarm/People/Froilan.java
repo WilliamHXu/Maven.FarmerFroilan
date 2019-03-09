@@ -1,12 +1,15 @@
 package com.zipcodewilmington.froilansfarm.People;
 
-public class Froilan extends Farmer {
+import com.zipcodewilmington.froilansfarm.Interfaces.PeopleInterfaces.Botanist;
+import com.zipcodewilmington.froilansfarm.Interfaces.PeopleInterfaces.Rider;
+
+public class Froilan extends Farmer implements Botanist, Rider {
 
     private static Froilan froilan;
 
     private Froilan(){}
 
-    public static Farmer getInstance(){
+    public static Froilan getInstance(){
         if(froilan == null){
             froilan = new Froilan();
         }
