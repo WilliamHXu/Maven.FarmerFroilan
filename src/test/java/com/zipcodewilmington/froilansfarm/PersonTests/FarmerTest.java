@@ -2,6 +2,7 @@ package com.zipcodewilmington.froilansfarm.PersonTests;
 
 import com.zipcodewilmington.froilansfarm.Animals.Animal;
 import com.zipcodewilmington.froilansfarm.Crops.Crop;
+import com.zipcodewilmington.froilansfarm.Crops.TomatoPlant;
 import com.zipcodewilmington.froilansfarm.Edibles.EarCorn;
 import com.zipcodewilmington.froilansfarm.Edibles.Egg;
 import com.zipcodewilmington.froilansfarm.Edibles.Tomato;
@@ -17,6 +18,11 @@ import org.junit.Test;
 
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+import java.util.Arrays;
+
+import static org.hamcrest.core.IsCollectionContaining.hasItem;
 
 public class FarmerTest {
 
@@ -38,7 +44,7 @@ public class FarmerTest {
     }
 
     @Test
-    public void eatCornTest(){
+    public void eatCornTest() {
         Farmer farmer = new Farmer();
         Edible edible = new EarCorn();
         boolean actual = farmer.eat(edible);
@@ -46,7 +52,7 @@ public class FarmerTest {
     }
 
     @Test
-    public void eatTomatoTest(){
+    public void eatTomatoTest() {
         Farmer farmer = new Farmer();
         Edible edible = new Tomato();
         boolean actual = farmer.eat(edible);
@@ -54,7 +60,7 @@ public class FarmerTest {
     }
 
     @Test
-    public void eatEggTest(){
+    public void eatEggTest() {
         Farmer farmer = new Farmer();
         Edible edible = new Egg();
         boolean actual = farmer.eat(edible);
@@ -62,16 +68,15 @@ public class FarmerTest {
     }
 
     @Test
-    public void eatInedibleTest(){
+    public void eatInedibleTest() {
         Farmer farmer = new Farmer();
         boolean actual = farmer.eat(null);
         Assert.assertFalse(actual);
     }
 
 
-
     @Test
-    public void setMountedTest(){
+    public void setMountedTest() {
         Farmer farmer = new Farmer();
         farmer.setMounted(true);
         boolean actual = farmer.isNowMounted();
@@ -79,7 +84,7 @@ public class FarmerTest {
     }
 
     @Test
-    public void mountTractorTest(){
+    public void mountTractorTest() {
         Farmer farmer = new Farmer();
         Tractor tractor = new Tractor();
         farmer.mount(tractor);
@@ -88,7 +93,7 @@ public class FarmerTest {
     }
 
     @Test
-    public void dismountTractorTest(){
+    public void dismountTractorTest() {
         Farmer farmer = new Farmer();
         Tractor tractor = new Tractor();
         farmer.dismount(tractor);
@@ -113,11 +118,15 @@ public class FarmerTest {
         Assert.assertEquals(expected, actual);
     }
 
-
-
     @Test
     public void plantTest() {
+        Farmer farmer = new Farmer();
+        CropRow cropRow = new CropRow();
+        TomatoPlant tomatoPlant = new TomatoPlant();
 
+        farmer.plant(tomatoPlant, cropRow);
+
+        Assert.assertEquals(cropRow.get(), tomatoPlant);
     }
 
     @After
