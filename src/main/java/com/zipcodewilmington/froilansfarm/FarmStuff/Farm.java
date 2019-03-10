@@ -1,6 +1,8 @@
 package com.zipcodewilmington.froilansfarm.FarmStuff;
 
 import com.zipcodewilmington.froilansfarm.Field.Field;
+import com.zipcodewilmington.froilansfarm.Vehicle.Aircraft.CropDuster;
+import com.zipcodewilmington.froilansfarm.Vehicle.FarmVehicles.Tractor;
 
 import java.util.ArrayList;
 
@@ -10,17 +12,21 @@ public class Farm {
     private FarmHouse farmHouse;
     private Field field;
     private Silo silo;
+    private Tractor tractor;
+    private CropDuster cropDuster;
 
-    public Farm(ArrayList<Stable> stables, ArrayList<ChickenCoop> chickenCoops, FarmHouse farmHouse, Field field, Silo silo) {
+    public Farm(ArrayList<Stable> stables, ArrayList<ChickenCoop> chickenCoops, FarmHouse farmHouse, Field field, Silo silo, Tractor tractor, CropDuster cropDuster) {
         this.stables = stables;
         this.chickenCoops = chickenCoops;
         this.farmHouse = farmHouse;
         this.field = field;
         this.silo = silo;
+        this.tractor = tractor;
+        this.cropDuster = cropDuster;
     }
 
     public Farm() {
-        this(new ArrayList<Stable>(), new ArrayList<ChickenCoop>(), new FarmHouse(), new Field(), new Silo());
+        this(new ArrayList<>(), new ArrayList<>(), new FarmHouse(), new Field(), new Silo(), new Tractor(), new CropDuster());
     }
 
     public ArrayList<Stable> getStables() {
@@ -69,5 +75,21 @@ public class Farm {
 
     public void setSilo(Silo silo) {
         this.silo = silo;
+    }
+
+    public Tractor getTractor() {
+        return tractor;
+    }
+
+    public void setTractor(Tractor tractor) {
+        this.tractor = tractor;
+    }
+
+    public CropDuster getCropDuster() {
+        return cropDuster;
+    }
+
+    public void setCropDuster(CropDuster cropDuster) {
+        this.cropDuster = cropDuster;
     }
 }
