@@ -4,11 +4,18 @@ import com.zipcodewilmington.froilansfarm.Crops.CornStalk;
 import com.zipcodewilmington.froilansfarm.Crops.Crop;
 import com.zipcodewilmington.froilansfarm.Crops.SoybeanPlant;
 import com.zipcodewilmington.froilansfarm.Crops.TomatoPlant;
-import com.zipcodewilmington.froilansfarm.Edibles.Tomato;
 import com.zipcodewilmington.froilansfarm.FarmStuff.Farm;
 import com.zipcodewilmington.froilansfarm.Field.CropRow;
 
 public class Sunday extends DayOfWeek{
+
+    public static void run(Farm farm){
+        breakfast(farm);
+        morning(farm);
+        lunch(farm);
+        afternoon(farm);
+        dinner(farm);
+    }
 
     public static void afternoon(Farm farm){
         plantCropRow(farm, new CornStalk());
