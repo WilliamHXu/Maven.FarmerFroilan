@@ -15,9 +15,9 @@ public class Froilanda extends Farmer implements Pilot {
         return froilanda;
     }
 
-    public void operateAircraft() {
-
-    }
+//    public void operateAircraft() {
+//
+//    }
 
 }
 
