@@ -7,7 +7,9 @@ public class Froilan extends Farmer implements Botanist, Rider {
 
     private static Froilan froilan;
 
-    private Froilan(){}
+    private Froilan(){
+        name = "Froilan";
+    }
 
     public static Froilan getInstance(){
         if(froilan == null){

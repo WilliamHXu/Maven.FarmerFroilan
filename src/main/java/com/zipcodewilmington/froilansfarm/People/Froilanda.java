@@ -6,7 +6,9 @@ public class Froilanda extends Farmer implements Pilot {
 
     private static Froilanda froilanda;
 
-    private Froilanda(){}
+    private Froilanda(){
+        name = "Froilanda";
+    }
 
     public static Froilanda getInstance(){
         if(froilanda == null){

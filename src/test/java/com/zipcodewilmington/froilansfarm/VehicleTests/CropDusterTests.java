@@ -39,7 +39,7 @@ public class CropDusterTests {
         CropDuster cropDuster = new CropDuster();
         cropDuster.fly();
 
-        boolean actual = cropDuster.getisFlying();
+        boolean actual = cropDuster.getIsFlying();
 
         Assert.assertTrue(actual);
 

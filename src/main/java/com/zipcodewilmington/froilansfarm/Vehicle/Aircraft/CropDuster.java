@@ -25,23 +25,6 @@ public class CropDuster extends Vehicle implements FarmVehicle, Aircraft {
         pilot = null;
     }
 
-    public boolean assignPilot(Person pilot) {
-
-        boolean bool = false;
-        if (pilot instanceof Pilot) {
-            this.pilot = pilot;
-            bool = true;
-
-        }
-        return bool;
-    }
-
-    public void disEmbark() {
-
-        pilot= null;
-
-    }
-
 
     public void makeNoise() {
 
@@ -50,14 +33,18 @@ public class CropDuster extends Vehicle implements FarmVehicle, Aircraft {
     }
 
     public void fly() {
-
-        if(assignPilot(pilot)) {
+        if(pilot instanceof Pilot) {
             isFlying = true;
+            System.out.println("We flying!");
         }
 
         else {
-
+            System.out.println("I can't fly this!");
         }
+    }
+
+    public void land(){
+        isFlying = false;
     }
 
     public Edible[] operate(Farm farm) {
@@ -86,7 +73,29 @@ public class CropDuster extends Vehicle implements FarmVehicle, Aircraft {
         System.out.println("The crop row has been fertilized");
     }
 
-    public boolean getisFlying() {
+    public boolean getIsFlying() {
         return isFlying;
+    }
+
+    @Override
+    public void seatRider(Person person) {
+        if (person instanceof Pilot) {
+            this.pilot = person;
+            System.out.println(String.format("%s got in plane", person.getName()));
+        }
+        else {
+            System.out.println("Are you a pilot?");
+        }
+    }
+
+    @Override
+    public void disembarkRider() {
+        if(!isFlying) {
+            pilot = null;
+            System.out.println("Getting out of plane");
+        }
+        else{
+            System.out.println("We need to land first!");
+        }
     }
 }
