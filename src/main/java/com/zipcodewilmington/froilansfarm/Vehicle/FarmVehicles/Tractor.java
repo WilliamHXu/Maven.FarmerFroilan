@@ -7,6 +7,8 @@ import com.zipcodewilmington.froilansfarm.Field.CropRow;
 import com.zipcodewilmington.froilansfarm.Field.Field;
 import com.zipcodewilmington.froilansfarm.Interfaces.Edible;
 import com.zipcodewilmington.froilansfarm.Interfaces.VehicleInterfaces.FarmVehicle;
+import com.zipcodewilmington.froilansfarm.People.Farmer;
+import com.zipcodewilmington.froilansfarm.People.Person;
 import com.zipcodewilmington.froilansfarm.Vehicle.Vehicle;
 
 import java.util.ArrayList;
@@ -14,10 +16,7 @@ import java.util.Arrays;
 
 public class Tractor extends Vehicle implements FarmVehicle {
 
-//    public Edible harvestCrop(Crop crop){
-//
-//        return crop.yield();
-//    }
+    Person rider;
 
     public void makeNoise() {
 
@@ -51,16 +50,28 @@ public class Tractor extends Vehicle implements FarmVehicle {
         ArrayList <CropRow> cropRows = field.get();
         for(CropRow c : cropRows){
             Edible [] edible = harvest(c);
-            for (Edible e: edible) {
-                edibles.add(e);
-            }
+            edibles.addAll(Arrays.asList(edible));
 
         }
         return edibles.toArray(new Edible[0]);
         }
 
+    @Override
+    public void seatRider(Person person) {
+        if (person instanceof Farmer) {
+            System.out.println(String.format("%s got on the tractor.", person.getName()));
+            rider = person;
+        }
 
-       // @Override AtEquals method
+    }
+
+    @Override
+    public void disembarkRider() {
+        rider = null;
+    }
+
+
+    // @Override AtEquals method
 
     }
 

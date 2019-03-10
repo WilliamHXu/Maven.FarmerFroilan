@@ -1,9 +1,8 @@
 package com.zipcodewilmington.froilansfarm.People;
 
+import com.zipcodewilmington.froilansfarm.Animals.Horse;
 import com.zipcodewilmington.froilansfarm.Crops.Crop;
 import com.zipcodewilmington.froilansfarm.Edibles.EarCorn;
-import com.zipcodewilmington.froilansfarm.Edibles.Egg;
-import com.zipcodewilmington.froilansfarm.Edibles.Tomato;
 import com.zipcodewilmington.froilansfarm.Field.CropRow;
 import com.zipcodewilmington.froilansfarm.Interfaces.Eater;
 import com.zipcodewilmington.froilansfarm.Interfaces.Edible;
@@ -14,27 +13,18 @@ import com.zipcodewilmington.froilansfarm.Interfaces.Rideable;
 public class Farmer extends Person implements Rider, Botanist, Eater {
 
     private boolean isMounted;
-    String name;
-
 
     public Farmer() {
         isMounted = false;
     }
 
     public Farmer(String name){
-        this.name = name;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
+        super.name = name;
+        isMounted = false;
     }
 
     public boolean eat(Edible food) {
-        if (food instanceof EarCorn || food instanceof Tomato || food instanceof Egg) {
+        if (food != null) {
             return true;
         } else {
             return false;
@@ -51,15 +41,14 @@ public class Farmer extends Person implements Rider, Botanist, Eater {
         row.add(crop);
     }
 
-//    public void feedHorse() {
-//    }
-
     public void mount(Rideable rideable) {
         isMounted = true;
+        rideable.seatRider(this);
     }
 
     public void dismount(Rideable rideable) {
         isMounted = false;
+        rideable.disembarkRider();
     }
 
 
@@ -71,6 +60,8 @@ public class Farmer extends Person implements Rider, Botanist, Eater {
         this.isMounted = isMounted;
     }
 
-
+    public void feedHorse(Horse horse){
+        horse.eat(new EarCorn());
+    }
 
 }

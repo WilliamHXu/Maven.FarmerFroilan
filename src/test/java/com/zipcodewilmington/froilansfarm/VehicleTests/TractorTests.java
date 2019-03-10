@@ -43,7 +43,7 @@ public class TractorTests {
     public void operateTest() {
         Tractor tractor = new Tractor();
         Field field = new Field();
-        Farm farm = new Farm(null, null,null, null, null);
+        Farm farm = new Farm();
         tractor.operate(farm);
 
        // Assert.assertEquals(expected , actual);
