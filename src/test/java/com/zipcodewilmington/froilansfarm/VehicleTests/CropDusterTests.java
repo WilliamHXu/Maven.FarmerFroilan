@@ -2,6 +2,7 @@ package com.zipcodewilmington.froilansfarm.VehicleTests;
 
 import com.zipcodewilmington.froilansfarm.FarmStuff.Farm;
 import com.zipcodewilmington.froilansfarm.Field.CropRow;
+import com.zipcodewilmington.froilansfarm.People.Froilanda;
 import com.zipcodewilmington.froilansfarm.Vehicle.Aircraft.CropDuster;
 import com.zipcodewilmington.froilansfarm.Vehicle.FarmVehicles.Tractor;
 import org.junit.After;
@@ -37,6 +38,8 @@ public class CropDusterTests {
     public void flyTest() {
 
         CropDuster cropDuster = new CropDuster();
+        Froilanda froilanda = Froilanda.getInstance();
+        froilanda.mount(cropDuster);
         cropDuster.fly();
 
         boolean actual = cropDuster.getIsFlying();
