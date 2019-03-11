@@ -11,6 +11,10 @@ public class SimEngine {
     Froilan froilan = Froilan.getInstance();
     Froilanda froilanda = Froilanda.getInstance();
 
+    public SimEngine(Farm farm) {
+        this.farm = farm;
+    }
+
     public void simFullWeek(){
         sunday();
         monday();
@@ -22,26 +26,30 @@ public class SimEngine {
     }
 
     public void sunday(){
-        Sunday.run(farm);
+        Sunday sunday = new Sunday();
+        sunday.run(farm);
     }
 
     public void monday(){
-        Monday.run(farm);
+        Monday monday = new Monday();
+        monday.run(farm);
     }
     public void tuesday(){
-        Tuesday.run(farm);
+        Tuesday tuesday = new Tuesday();
+        tuesday.run(farm);
     }
     public void wednesday(){
-        Wednesday.run(farm);
+        Wednesday wednesday = new Wednesday();
+        wednesday.run(farm);
     }
     public void thursday(){
-        Sunday.run(farm);
+        sunday();
     }
     public void friday(){
-        Monday.run(farm);
+        monday();
     }
 
     public void saturday(){
-        Tuesday.run(farm);
+        tuesday();
     }
 }

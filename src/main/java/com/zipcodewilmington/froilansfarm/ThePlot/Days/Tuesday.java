@@ -9,7 +9,7 @@ import com.zipcodewilmington.froilansfarm.Vehicle.FarmVehicles.Tractor;
 
 public class Tuesday extends DayOfWeek {
 
-    public static void run(Farm farm) {
+    public void run(Farm farm) {
         breakfast(farm);
         morning(farm);
         lunch(farm);
@@ -18,7 +18,7 @@ public class Tuesday extends DayOfWeek {
         showSilo(farm);
     }
 
-    public static void afternoon(Farm farm) {
+    public void afternoon(Farm farm) {
         Tractor tractor = farm.getTractor();
         froilan.mount(tractor);
         Edible[] edibles = tractor.operate(farm);

@@ -13,7 +13,7 @@ public class SiloTest {
     @Test
     public void addEdibleTest1(){
         // Given
-        Silo silo = new Silo();
+        Silo silo = new Silo(new TreeMap<>());
         EarCorn earCorn = new EarCorn();
         Tomato tomato = new Tomato();
         // When
@@ -22,8 +22,8 @@ public class SiloTest {
             silo.addEdible(tomato);
         }
         TreeMap<String, Integer> expected = new TreeMap<>();
-        expected.put("com.zipcodewilmington.froilansfarm.Edibles.EarCorn", 5);
-        expected.put("com.zipcodewilmington.froilansfarm.Edibles.Tomato", 5);
+        expected.put("EarCorn", 5);
+        expected.put("Tomato", 5);
         TreeMap<String, Integer> actual = silo.getFoodInSilo();
         // Then
         Assert.assertEquals(expected, actual);
@@ -32,7 +32,7 @@ public class SiloTest {
     @Test
     public void removeEdibleTest1(){
         // Given
-        Silo silo = new Silo();
+        Silo silo = new Silo(new TreeMap<>());
         EarCorn earCorn = new EarCorn();
         Tomato tomato = new Tomato();
         // When
@@ -44,8 +44,8 @@ public class SiloTest {
             silo.removeEdible(earCorn);
         }
         TreeMap<String, Integer> expected = new TreeMap<>();
-        expected.put("com.zipcodewilmington.froilansfarm.Edibles.EarCorn", 20);
-        expected.put("com.zipcodewilmington.froilansfarm.Edibles.Tomato", 50);
+        expected.put("EarCorn", 20);
+        expected.put("Tomato", 50);
         TreeMap<String, Integer> actual = silo.getFoodInSilo();
         // Then
         Assert.assertEquals(expected, actual);

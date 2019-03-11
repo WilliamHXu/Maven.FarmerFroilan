@@ -10,7 +10,7 @@ import java.util.ArrayList;
 
 public class Wednesday extends DayOfWeek{
 
-    public static void run(Farm farm) {
+    public void run(Farm farm) {
         breakfast(farm);
         morning(farm);
         lunch(farm);
@@ -19,7 +19,7 @@ public class Wednesday extends DayOfWeek{
         showSilo(farm);
     }
 
-    public static void afternoon(Farm farm) {
+    public void afternoon(Farm farm) {
         ArrayList<ChickenCoop> chickenCoops = farm.getChickenCoops();
         Silo silo = farm.getSilo();
         for (ChickenCoop coop : chickenCoops){
