@@ -16,17 +16,20 @@ import java.util.ArrayList;
 
 public class DayOfWeek {
 
-    static Froilan froilan = Froilan.getInstance();
-    static Froilanda froilanda = Froilanda.getInstance();
+    Froilan froilan = Froilan.getInstance();
+    Froilanda froilanda = Froilanda.getInstance();
 
-    static final Edible[] froilanBreakfast = {new EarCorn(), new Tomato(), new Tomato(), new Egg(), new Egg(), new Egg(), new Egg(), new Egg()};
-    static final Edible[] froilandaBreakfast = {new EarCorn(), new EarCorn(), new Tomato(), new Egg(), new Egg()};
-    static final Edible[] froilanLunch = {new EarCorn(), new EarCorn(), new Tomato(), new Tomato()};
-    static final Edible[] froilandaLunch = {new EarCorn(), new Tomato()};
-    static final Edible[] froilanDinner = {new EarCorn(), new EarCorn(), new Tomato(), new Tomato(), new Egg(), new Egg(), new Egg()};
-    static final Edible[] froilandaDinner = {new EarCorn(), new EarCorn(), new EarCorn(), new Tomato()};
+    private final Edible[] froilanBreakfast = {new EarCorn(), new Tomato(), new Tomato(), new Egg(), new Egg(), new Egg(), new Egg(), new Egg()};
+    private final Edible[] froilandaBreakfast = {new EarCorn(), new EarCorn(), new Tomato(), new Egg(), new Egg()};
+    private final Edible[] froilanLunch = {new EarCorn(), new EarCorn(), new Tomato(), new Tomato()};
+    private final Edible[] froilandaLunch = {new EarCorn(), new Tomato()};
+    private final Edible[] froilanDinner = {new EarCorn(), new EarCorn(), new Tomato(), new Tomato(), new Egg(), new Egg(), new Egg()};
+    private final Edible[] froilandaDinner = {new EarCorn(), new EarCorn(), new EarCorn(), new Tomato()};
 
-    public static void run(Farm farm){
+    public DayOfWeek(){
+    }
+
+    public void run(Farm farm){
         breakfast(farm);
         morning(farm);
         lunch(farm);
@@ -35,41 +38,42 @@ public class DayOfWeek {
         showSilo(farm);
     }
 
-    public static void dinner(Farm farm) {
+    public void dinner(Farm farm) {
         // Froilan's Dinner
         mealHelper(froilan, froilanDinner, farm);
         // Froilanda's Dinner
         mealHelper(froilanda, froilandaDinner, farm);
     }
 
-    public static void afternoon(Farm farm) {
+    public void afternoon(Farm farm) {
 
     }
 
-    public static void lunch(Farm farm) {
+    public void lunch(Farm farm) {
         // Froilan's Lunch
         mealHelper(froilan, froilanLunch, farm);
         // Froilanda's Lunch
         mealHelper(froilanda, froilandaLunch, farm);
     }
 
-    public static void morning(Farm farm) {
+    public void morning(Farm farm) {
         rideHorses(farm);
         grainHorses(farm);
     }
 
 
-    public static void breakfast(Farm farm){
+    public void breakfast(Farm farm){
         // Froilan's Breakfast
         mealHelper(froilan, froilanBreakfast, farm);
         // Froilanda's Breakfast
         mealHelper(froilanda, froilandaBreakfast, farm);
     }
 
-    protected static void mealHelper(Farmer farmer, Edible[] meal, Farm farm){
+    protected void mealHelper(Farmer farmer, Edible[] meal, Farm farm){
+        Silo silo = farm.getSilo();
         for (Edible edible : meal){
             // Get from Silo
-            if (farm.getSilo().removeEdible(edible)){
+            if (silo.removeEdible(edible)){
                 farmer.eat(edible);
             }
             else{
@@ -78,7 +82,7 @@ public class DayOfWeek {
         }
     }
 
-    protected static void rideHorses(Farm farm) {
+    protected void rideHorses(Farm farm) {
         ArrayList<Stable> stables = farm.getStables();
         for (Stable stable : stables){
             ArrayList<Horse> horses = stable.get();
@@ -90,7 +94,7 @@ public class DayOfWeek {
         }
     }
 
-    protected static void grainHorses(Farm farm) {
+    protected void grainHorses(Farm farm) {
         ArrayList<Stable> stables = farm.getStables();
         for (Stable stable : stables){
             ArrayList<Horse> horses = stable.get();
@@ -104,7 +108,7 @@ public class DayOfWeek {
         }
     }
 
-    protected static void showSilo(Farm farm){
+    protected void showSilo(Farm farm){
         Silo silo = farm.getSilo();
         String string = silo.toString();
         System.out.println(string);

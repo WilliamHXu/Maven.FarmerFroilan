@@ -9,7 +9,7 @@ import com.zipcodewilmington.froilansfarm.Field.CropRow;
 
 public class Sunday extends DayOfWeek{
 
-    public static void run(Farm farm){
+    public void run(Farm farm){
         breakfast(farm);
         morning(farm);
         lunch(farm);
@@ -18,13 +18,13 @@ public class Sunday extends DayOfWeek{
         showSilo(farm);
     }
 
-    public static void afternoon(Farm farm){
+    public void afternoon(Farm farm){
         plantCropRow(farm, new CornStalk());
         plantCropRow(farm, new TomatoPlant());
         plantCropRow(farm, new SoybeanPlant());
     }
 
-    public static void plantCropRow(Farm farm, Crop crop) {
+    public void plantCropRow(Farm farm, Crop crop) {
         CropRow cropRow = null;
         if (crop instanceof CornStalk) {
             cropRow = farm.getField().get().get(0);

@@ -4,7 +4,7 @@ import com.zipcodewilmington.froilansfarm.FarmStuff.Farm;
 import com.zipcodewilmington.froilansfarm.Vehicle.Aircraft.CropDuster;
 
 public class Monday extends DayOfWeek {
-    public static void run(Farm farm) {
+    public void run(Farm farm) {
         breakfast(farm);
         morning(farm);
         lunch(farm);
@@ -13,7 +13,7 @@ public class Monday extends DayOfWeek {
         showSilo(farm);
     }
 
-    public static void afternoon(Farm farm) {
+    public void afternoon(Farm farm) {
         CropDuster cropDuster = farm.getCropDuster();
         froilanda.mount(cropDuster);
         cropDuster.operate(farm);

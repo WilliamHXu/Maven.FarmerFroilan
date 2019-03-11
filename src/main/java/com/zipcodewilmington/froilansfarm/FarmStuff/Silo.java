@@ -17,9 +17,9 @@ public class Silo {
 
     public Silo() {
         foodInSilo = new TreeMap<>();
-        String corn = EarCorn.class.getName();
-        String tomato = Tomato.class.getName();
-        String egg = Egg.class.getName();
+        String corn = EarCorn.class.getSimpleName();
+        String tomato = Tomato.class.getSimpleName();
+        String egg = Egg.class.getSimpleName();
         foodInSilo.put(corn, 500);
         foodInSilo.put(tomato, 100);
         foodInSilo.put(egg, 200);
@@ -27,7 +27,7 @@ public class Silo {
 
     public void addEdible(Edible edible){
         Set<String> keys = foodInSilo.keySet();
-        String edibleName = edible.getClass().getName();
+        String edibleName = edible.getClass().getSimpleName();
         boolean flag = false;
         for (String key : keys) {
             if (edibleName.equals(key)) {
@@ -45,7 +45,7 @@ public class Silo {
 
     public boolean removeEdible(Edible edible){
         Set<String> keys = foodInSilo.keySet();
-        String edibleName = edible.getClass().getName();
+        String edibleName = edible.getClass().getSimpleName();
         boolean flag = false;
         for (String key : keys) {
             if (edibleName.equals(key)) {
