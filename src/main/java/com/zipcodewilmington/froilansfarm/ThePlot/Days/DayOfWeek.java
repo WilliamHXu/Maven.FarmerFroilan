@@ -5,6 +5,7 @@ import com.zipcodewilmington.froilansfarm.Edibles.EarCorn;
 import com.zipcodewilmington.froilansfarm.Edibles.Egg;
 import com.zipcodewilmington.froilansfarm.Edibles.Tomato;
 import com.zipcodewilmington.froilansfarm.FarmStuff.Farm;
+import com.zipcodewilmington.froilansfarm.FarmStuff.Silo;
 import com.zipcodewilmington.froilansfarm.FarmStuff.Stable;
 import com.zipcodewilmington.froilansfarm.Interfaces.Edible;
 import com.zipcodewilmington.froilansfarm.People.Farmer;
@@ -31,6 +32,7 @@ public class DayOfWeek {
         lunch(farm);
         afternoon(farm);
         dinner(farm);
+        showSilo(farm);
     }
 
     public static void dinner(Farm farm) {
@@ -100,5 +102,11 @@ public class DayOfWeek {
                 }
             }
         }
+    }
+
+    protected static void showSilo(Farm farm){
+        Silo silo = farm.getSilo();
+        String string = silo.toString();
+        System.out.println(string);
     }
 }

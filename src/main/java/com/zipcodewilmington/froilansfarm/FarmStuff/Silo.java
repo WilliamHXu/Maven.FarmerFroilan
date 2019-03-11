@@ -1,5 +1,8 @@
 package com.zipcodewilmington.froilansfarm.FarmStuff;
 
+import com.zipcodewilmington.froilansfarm.Edibles.EarCorn;
+import com.zipcodewilmington.froilansfarm.Edibles.Egg;
+import com.zipcodewilmington.froilansfarm.Edibles.Tomato;
 import com.zipcodewilmington.froilansfarm.Interfaces.Edible;
 
 import java.util.Set;
@@ -14,6 +17,12 @@ public class Silo {
 
     public Silo() {
         foodInSilo = new TreeMap<>();
+        String corn = EarCorn.class.getName();
+        String tomato = Tomato.class.getName();
+        String egg = Egg.class.getName();
+        foodInSilo.put(corn, 500);
+        foodInSilo.put(tomato, 100);
+        foodInSilo.put(egg, 200);
     }
 
     public void addEdible(Edible edible){
@@ -51,6 +60,16 @@ public class Silo {
 
     public TreeMap<String, Integer> getFoodInSilo() {
         return foodInSilo;
+    }
+
+    @Override
+    public String toString(){
+        String result = "";
+        Set<String> keys = foodInSilo.keySet();
+        for (String key : keys){
+            result += String.format("%d %ss in Silo\n", foodInSilo.get(key), key);
+        }
+        return result;
     }
 
 

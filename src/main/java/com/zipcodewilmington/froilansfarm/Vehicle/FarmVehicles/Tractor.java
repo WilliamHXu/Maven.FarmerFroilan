@@ -53,6 +53,7 @@ public class Tractor extends Vehicle implements FarmVehicle {
             edibles.addAll(Arrays.asList(edible));
 
         }
+        field.clear();
         return edibles.toArray(new Edible[0]);
         }
 

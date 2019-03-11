@@ -10,4 +10,10 @@ public class Field extends CRUDs<CropRow> {
     public Field() {
         objects = new ArrayList<CropRow>();
     }
+
+    public void clear(){
+        for(CropRow cropRow : objects){
+            cropRow.clear();
+        }
+    }
 }

@@ -15,6 +15,7 @@ public class Sunday extends DayOfWeek{
         lunch(farm);
         afternoon(farm);
         dinner(farm);
+        showSilo(farm);
     }
 
     public static void afternoon(Farm farm){
