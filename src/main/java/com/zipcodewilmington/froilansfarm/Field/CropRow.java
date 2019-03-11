@@ -11,4 +11,8 @@ public class CropRow extends CRUDs<Crop> {
         objects = new ArrayList<Crop>();
     }
 
+    public void clear(){
+        objects.clear();
+    }
+
 }
