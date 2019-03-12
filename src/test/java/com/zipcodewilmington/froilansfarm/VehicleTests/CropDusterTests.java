@@ -1,7 +1,13 @@
 package com.zipcodewilmington.froilansfarm.VehicleTests;
 
+import com.zipcodewilmington.froilansfarm.Crops.CornStalk;
+import com.zipcodewilmington.froilansfarm.Crops.Crop;
+import com.zipcodewilmington.froilansfarm.Crops.TomatoPlant;
+import com.zipcodewilmington.froilansfarm.Edibles.EarCorn;
 import com.zipcodewilmington.froilansfarm.FarmStuff.Farm;
 import com.zipcodewilmington.froilansfarm.Field.CropRow;
+import com.zipcodewilmington.froilansfarm.Field.Field;
+import com.zipcodewilmington.froilansfarm.Interfaces.Edible;
 import com.zipcodewilmington.froilansfarm.People.Froilanda;
 import com.zipcodewilmington.froilansfarm.Vehicle.Aircraft.CropDuster;
 import com.zipcodewilmington.froilansfarm.Vehicle.FarmVehicles.Tractor;
@@ -50,12 +56,65 @@ public class CropDusterTests {
 
     @Test
     public void operateTest() {
+        CropDuster cropDuster = new CropDuster();
+        CropRow cropRow1 = new CropRow();
+        Crop cornStalk1 = new CornStalk();
+        Crop cornStalk2 = new CornStalk();
+        Crop cornStalk3 = new CornStalk();
+        Crop cornStalk4 = new CornStalk();
+
+        cropRow1.add(cornStalk1);
+        cropRow1.add(cornStalk2);
+        cropRow1.add(cornStalk3);
+        cropRow1.add(cornStalk4);
+
+        CropRow cropRow2 = new CropRow();
+        Crop tomato1 = new TomatoPlant();
+        Crop tomato2 = new TomatoPlant();
+        Crop tomato3 = new TomatoPlant();
+        Crop tomato4 = new TomatoPlant();
+
+        cropRow2.add(tomato1);
+        cropRow2.add(tomato2);
+        cropRow2.add(tomato3);
+        cropRow2.add(tomato4);
+
+        Field field = new Field();
+        field.add(cropRow1);
+        field.add(cropRow2);
+
+        Farm farm = new Farm();
+        farm.setField(field);
+        cropDuster.operate(farm);
+
+        Edible[] actual = cropDuster.operate(farm);
+
+        Assert.assertNull(actual);
 
     }
 
     @Test
     public void fertilizeTest() {
+        CropDuster cropDuster = new CropDuster();
+        CropRow cropRow = new CropRow();
 
+        Crop cornStalk1 = new CornStalk();
+        Crop cornStalk2 = new CornStalk();
+        Crop cornStalk3 = new CornStalk();
+        Crop cornStalk4 = new CornStalk();
+
+        cropRow.add(cornStalk1);
+        cropRow.add(cornStalk2);
+        cropRow.add(cornStalk3);
+        cropRow.add(cornStalk4);
+
+
+        cropDuster.fertilize(cropRow);
+        Boolean result = false;
+
+        result = cornStalk1.isFertilized();
+
+        Assert.assertTrue(result);
     }
 
     @After
